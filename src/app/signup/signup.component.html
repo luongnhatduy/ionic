@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true">
+
+<div class="position-fixed w-100 h-100 d-flex column justify-content-center align-items-center ">
+  <div>
+      <!-- <div  class="alert alert-danger" role="alert">
+          Account already exists!!!
+      </div> -->
+      <h1 class="text-center">SignUp</h1>
+          <div class="form-group">
+              <label>Username</label>
+              <ion-input class="form-control" (ionChange)="handleUserName($event)"></ion-input>
+          </div>
+          <div class="form-group">
+              <label>Password</label>
+              <ion-input class="form-control" (ionChange)="handlePassWord($event)"></ion-input>
+          </div>
+          <div class="form-group">
+              <label>Name</label>
+              <ion-input class="form-control" (ionChange)="handleName($event)"></ion-input>
+          </div>
+          <div class="form-group">
+              <label>Age</label>
+              <ion-input class="form-control" (ionChange)="handleAge($event)"></ion-input>
+          </div>
+          <div class="form-group">
+              <label>Phone</label>
+              <ion-input class="form-control" (ionChange)="handlePhone($event)"></ion-input>
+          </div>
+          <div class="form-group d-flex justify-content-center align-items-center">
+              <button (click)="signUp()" class="btn btn-dark mr-4">SignUp</button>
+              <a routerLink="">Already have an account? Login</a>
+          </div>
+
+  </div>
+</div>
+</ion-content>

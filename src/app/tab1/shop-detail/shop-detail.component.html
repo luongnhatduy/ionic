@@ -1,3 +1,29 @@
-<p>
-  shop-detail works!
-</p>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Shop
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <img class="img" src={{item.thumbnail}} />
+    <ion-card-header>
+      <!-- <ion-card-subtitle>{{item.name}}</ion-card-subtitle> -->
+      <ion-card-title>{{item.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item.price}} VND
+    </ion-card-content>
+    <ion-card-content>
+      {{item.description}}
+    </ion-card-content>
+
+    <ion-card-content>
+      <button type="button" class="btn btn-outline-danger mr-4">Mua hàng</button>
+      <button type="button" (click)="addCart()" class="btn btn-outline-success">Thêm vào giỏ</button>
+    </ion-card-content>
+  </div>
+
+
+</ion-content>

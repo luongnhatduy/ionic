@@ -12,23 +12,5 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-list *ngFor="let item of listItem">
-    <ion-card class="card_item" type="button" (click)="goToDetail()">
-      <img class="img" src="https://cdn.tgdd.vn/Products/Images/42/188705/iphone-11-pro-black-600x600.jpg" />
-      <ion-card-header>
-        <ion-card-subtitle>{{item.name}}</ion-card-subtitle>
-        <ion-card-title>Madison, WI</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the
-        Wisconsin Territory in 1836.
-      </ion-card-content>
-      <ion-icon class="favorite" name="star"  [color]="cl? 'warning': 'success'"></ion-icon>
-    </ion-card>
-
-  </ion-list>
-
-
+  <app-product [data]="listItem"></app-product>
 </ion-content>
-<!-- <ion-router-outlet></ion-router-outlet> -->

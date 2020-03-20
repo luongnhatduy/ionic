@@ -1,3 +1,4 @@
+import { HistoryPurchasedComponent } from './../tab4/history-purchased/history-purchased.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { TabsPage } from "./tabs.page";
@@ -53,6 +54,13 @@ const routes: Routes = [
               import("../tab4/tab4.module").then(m => m.Tab4PageModule)
           }
         ]
+      },
+      {
+        path: "historyPurchased",
+        loadChildren: () =>
+          import("../tab4/history-purchased/history-purchased.module").then(
+            m => m.HistoryPurchasedModule
+          )
       },
       {
         path: "",

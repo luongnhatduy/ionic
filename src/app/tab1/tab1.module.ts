@@ -1,3 +1,4 @@
+import { ProductModule } from './../component/product/product.module';
 import { ShopDetailComponentModule } from "./shop-detail/shop-detail.module";
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
@@ -13,6 +14,7 @@ import { ExploreContainerComponentModule } from "../explore-container/explore-co
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
+    ProductModule,
     RouterModule.forChild([{ path: "", component: Tab1Page }])
   ],
 

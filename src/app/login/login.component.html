@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true">
+
+  <form class="position-fixed w-100 h-100 d-flex justify-content-center align-items-center ">
+    <form>
+      <!-- <ion-item *ngIf="messenge">
+        <div class="alert alert-danger" role="alert">
+          {{messenge}}
+        </div>
+      </ion-item> -->
+
+      <h1 class="text-center">Login</h1>
+      <form>
+        <div class="form-group">
+          <label>Username</label>
+          <ion-input class="form-control" (ionChange)="handleUserName($event)"></ion-input>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <ion-input class="form-control" (ionChange)="handlePassWord($event)"></ion-input>
+        </div>
+        <div class="form-group d-flex justify-content-center align-items-center">
+          <ion-buttons (click)="login()" class="btn btn-dark mr-4">Login</ion-buttons>
+          <a routerLink="/signUp">Sign up</a>
+        </div>
+      </form>
+    </form>
+  </form>
+
+</ion-content>

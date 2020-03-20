@@ -1,5 +1,5 @@
+import { ShopService } from "./service/shop.service";
 import { Router } from "@angular/router";
-import { ShopService } from "./../service/shop.service";
 import { Component } from "@angular/core";
 
 @Component({
@@ -9,14 +9,11 @@ import { Component } from "@angular/core";
 })
 export class Tab1Page {
   listItem: object[] = [];
-  cl: boolean = false 
   constructor(private shopService: ShopService, private router: Router) {}
   ngOnInit(): void {
-    this.listItem = this.shopService.listItem;
+    this.shopService.getData(this._getData.bind(this));
   }
-
-  goToDetail() {
-    console.log("asdads");
-    this.router.navigate(["/tabs/shopDetail"]);
+  _getData(data) {
+    this.listItem = data;
   }
 }
