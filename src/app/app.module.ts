@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ShopDetailComponentModule } from './tab1/shop-detail/shop-detail.module';
+import { ShopDetailComponentModule } from './component/shop-detail/shop-detail.module';
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";

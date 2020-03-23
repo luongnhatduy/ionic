@@ -11,12 +11,9 @@ export class ProductComponent implements OnInit {
   @Input() data: object[] = [];
   @Input() tabName: String;
 
-  cl: boolean = true;
   constructor(private router: Router, private productService: ProductService) {}
 
-  ngOnInit() {
-    console.log(this.tabName, "tab");
-  }
+  ngOnInit() {}
   goToDetail(item) {
     let itemString = JSON.stringify(item);
     this.router.navigate(["/tabs/shopDetail", { item: itemString }]);

@@ -1,3 +1,4 @@
+import { ProductModule } from './../component/product/product.module';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
     IonicModule,
     CommonModule,
     FormsModule,
+    ProductModule,
     ExploreContainerComponentModule,
     RouterModule.forChild([{ path: '', component: Tab3Page }])
   ],

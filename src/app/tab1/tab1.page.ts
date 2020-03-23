@@ -10,10 +10,15 @@ import { Component } from "@angular/core";
 export class Tab1Page {
   listItem: object[] = [];
   constructor(private shopService: ShopService, private router: Router) {}
-  ngOnInit(): void {
+
+  ionViewWillEnter() {
+    this.listItem = []
     this.shopService.getData(this._getData.bind(this));
   }
   _getData(data) {
     this.listItem = data;
+  }
+  doRefresh(event){
+    console.log(event,'lkoasd')
   }
 }

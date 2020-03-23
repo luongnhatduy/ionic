@@ -21,7 +21,7 @@ const routes: Routes = [
       {
         path: "shopDetail",
         loadChildren: () =>
-          import("../tab1/shop-detail/shop-detail.module").then(
+          import("../component/shop-detail/shop-detail.module").then(
             m => m.ShopDetailComponentModule
           )
       },

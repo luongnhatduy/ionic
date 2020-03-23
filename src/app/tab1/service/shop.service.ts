@@ -10,6 +10,7 @@ export class ShopService {
     const accountLogin = JSON.parse(localStorage.getItem("user"));
     this.http.get(`http://localhost:3000/all/${accountLogin._id}`).subscribe({
       next: respon => {
+        console.log(respon,'respon')
         callback(respon);
       },
       error: e => {},

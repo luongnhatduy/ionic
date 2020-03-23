@@ -1,5 +1,5 @@
 import { ProductModule } from './../component/product/product.module';
-import { ShopDetailComponentModule } from "./shop-detail/shop-detail.module";
+import { ShopDetailComponentModule } from "../component/shop-detail/shop-detail.module";
 import { IonicModule } from "@ionic/angular";
 import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
