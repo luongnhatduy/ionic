@@ -1,7 +1,12 @@
+import {
+  EventsService,
+  EventData
+} from "./../../common/events-service.service";
 import { async } from "@angular/core/testing";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ToastController } from "@ionic/angular";
+import { Observable, Subject } from "rxjs";
 
 @Component({
   selector: "app-shop-detail",
@@ -11,16 +16,25 @@ import { ToastController } from "@ionic/angular";
 export class ShopDetailComponent implements OnInit {
   cl: boolean = true;
   item: any;
+  count: number = 0;
+  tabName: string;
   constructor(
     private router: ActivatedRoute,
-    public toastController: ToastController
+    private route: Router,
+    public toastController: ToastController,
+    private events: EventsService
   ) {}
 
   ngOnInit() {
     this.router.params.subscribe(params => {
       this.item = JSON.parse(params.item);
+      this.tabName = params.tabName;
     });
   }
+
+  // ngOnDestroy() {
+  //   this.events.publish(new EventData("reloadPage"));
+  // }
   async addCart() {
     const cart = JSON.parse(localStorage.getItem("cart"))
       ? JSON.parse(localStorage.getItem("cart"))
@@ -45,19 +59,18 @@ export class ShopDetailComponent implements OnInit {
     await toast.present();
   }
   async buy() {
-    const buy = JSON.parse(localStorage.getItem("buy"))
-      ? JSON.parse(localStorage.getItem("buy"))
-      : [];
-    buy.push(this.item);
-    localStorage.setItem("buy", JSON.stringify(buy));
-
-    const toast = await this.toastController.create({
-      color: "success",
-      duration: 1000,
-      message: "buy success",
-      position: "middle"
-    });
-
-    toast.present();
+    let itemString = JSON.stringify(this.item);
+    this.route.navigate(["/coupon", { item: itemString, count: this.count }]);
+  }
+  reduction() {
+    if (this.count > 0) {
+      this.count--;
+    }
+  }
+  increase() {
+    this.count++;
+  }
+  goBack() {
+    this.route.navigate([`tabs/${this.tabName}`]);
   }
 }

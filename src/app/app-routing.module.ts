@@ -4,8 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 const routes: Routes = [
   {
     path: "",
-    loadChildren: () =>
-      import("./login/login.module").then(m => m.LoginModule)
+    loadChildren: () => import("./login/login.module").then(m => m.LoginModule)
   },
   {
     path: "signUp",
@@ -15,6 +14,25 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () => import("./tabs/tabs.module").then(m => m.TabsPageModule)
+  },
+  {
+    path: "shopDetail",
+    loadChildren: () =>
+      import("./component/shop-detail/shop-detail.module").then(
+        m => m.ShopDetailComponentModule
+      )
+  },
+  {
+    path: "historyPurchased",
+    loadChildren: () =>
+      import("./tab4/history-purchased/history-purchased.module").then(
+        m => m.HistoryPurchasedModule
+      )
+  },
+  {
+    path: "coupon",
+    loadChildren: () =>
+      import("./component/coupon/coupon.module").then(m => m.CouponModule)
   }
 ];
 @NgModule({

@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+
+  <ion-nav class="position-fixed w-100 h-100 d-flex justify-content-center align-items-center ">
+    <form>
+      <h1 class="text-center">Coupon</h1>
+      <form>
+        <div class="form-group">
+          <label>{{item.name}}</label>
+        </div>
+        <div class="form-group">
+          <label>{{item.price}} VND</label>
+        </div>
+        <div class="form-group">
+          <label>số điện thoại nhận hàng</label>
+          <ion-input class="form-control" (ionChange)="handlePhone($event)"></ion-input>
+        </div>
+        <div class="form-group">
+          <label>địa chỉ nhận hàng</label>
+          <ion-input class="form-control" (ionChange)="handleAddress($event)"></ion-input>
+        </div>
+        <div class="form-group d-flex justify-content-center align-items-center">
+          <ion-buttons (click)="buy()" class="btn btn-dark mr-4">Buy</ion-buttons>
+        </div>
+      </form>
+    </form>
+  </ion-nav>
+
+</ion-content>

@@ -1,3 +1,4 @@
+import { HistoryPurchasedService } from "./service/history-purchased.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./history-purchased.component.scss"]
 })
 export class HistoryPurchasedComponent implements OnInit {
-  constructor() {}
+  constructor(private historyPurchasedService: HistoryPurchasedService) {}
 
-  listItem: object[] = [];
+  listItem: any[];
   ngOnInit(): void {
-    this.listItem = JSON.parse(localStorage.getItem("buy"));
+    // this.listItem = JSON.parse(localStorage.getItem("buy"));
+  }
+  ionViewWillEnter(){
+    this._getData();
+  }
+  async _getData() {
+    this.listItem = await this.historyPurchasedService.getData();
+    console.log(this.listItem, "newdata");
   }
 }

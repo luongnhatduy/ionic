@@ -1,10 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
     <ion-title>
-      Shop
+      Shop detail
     </ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
   <div class="content">
     <img class="img" src={{item.thumbnail}} />
@@ -18,7 +22,11 @@
     <ion-card-content>
       {{item.description}}
     </ion-card-content>
-
+    <ul class="properties">
+      <li type="button" (click)="reduction()" class="item">-</li>
+      <li class="item">{{count}}</li>
+      <li type="button" (click)="increase()" class="item">+</li>
+    </ul>
     <ion-card-content>
       <button type="button" (click)="buy()" class="btn btn-outline-danger mr-4">Mua hàng</button>
       <button type="button" (click)="addCart()" class="btn btn-outline-success">Thêm vào giỏ</button>

@@ -1,15 +1,22 @@
 ion-content ion-toolbar {
-    --background: translucent;
-  }
-  
-  .img{
-    height: 300px;
-    width: 300px;
-    float: left;
-  }
-  
-  .content{
-    padding: 40px;
-  }
-  
-  
+  --background: translucent;
+}
+
+.img {
+  height: 300px;
+  width: 300px;
+  float: left;
+}
+
+.content {
+  padding: 40px;
+}
+
+.properties {
+  display: flex;
+  list-style: none;
+}
+.item {
+  padding: 5px 10px;
+  border: 2px solid #eeeeee;
+}

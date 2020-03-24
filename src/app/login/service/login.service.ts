@@ -16,10 +16,12 @@ export class LoginService {
       })
       .subscribe({
         next: respon => {
+          console.log(respon)
           this.router.navigate(["/tabs/tab1"]);
           localStorage.setItem("user", JSON.stringify(respon));
         },
         error: e => {
+          console.log(e)
           cb(e.error.errors);
         },
         complete: () => {}

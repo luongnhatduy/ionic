@@ -19,7 +19,7 @@ export class Tab4Page {
     this.phone = accountLogin.phone;
   }
   gotoHistory() {
-    this.router.navigate(["/tabs/historyPurchased"]);
+    this.router.navigate(["/historyPurchased"]);
   }
   logOut() {
     this.router.navigate([""]);

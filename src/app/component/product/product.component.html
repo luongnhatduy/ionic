@@ -13,14 +13,20 @@
         </ion-card-content>
       </div>
 
-      <ul *ngIf="tabName == 'tabCart'" class="properties">
+      <ul *ngIf="tabName == 'tab3'" class="properties">
         <li class="item">-</li>
         <li class="item">{{item.count}}</li>
         <li class="item">+</li>
       </ul>
+      <ion-card *ngIf="tabName == 'tab4'" >
+        <ion-card-subtitle>số lượng mua : {{item.coupon.count}}</ion-card-subtitle>
+        <ion-card-subtitle>số điện thoại : {{item.coupon.phone}} </ion-card-subtitle>
+        <ion-card-subtitle>địa chỉ nhận hàng : {{item.coupon.address}} </ion-card-subtitle>
 
+
+      </ion-card>
       <ion-icon type="button" (click)="favorite(item)" class="favorite" name="star"
-        *ngIf="tabName !== 'tabCart' && tabName !== 'tabProfile'" [color]="item.status ? 'warning': 'Secondary'">
+        *ngIf="tabName !== 'tab3' && tabName !== 'tab4'" [color]="item.status ? 'warning': 'Secondary'">
       </ion-icon>
     </ion-card>
   </ion-list>

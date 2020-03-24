@@ -1,4 +1,3 @@
-import { HistoryPurchasedComponent } from './../tab4/history-purchased/history-purchased.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { TabsPage } from "./tabs.page";
@@ -18,13 +17,7 @@ const routes: Routes = [
           }
         ]
       },
-      {
-        path: "shopDetail",
-        loadChildren: () =>
-          import("../component/shop-detail/shop-detail.module").then(
-            m => m.ShopDetailComponentModule
-          )
-      },
+
       {
         path: "tab2",
         children: [
@@ -55,13 +48,7 @@ const routes: Routes = [
           }
         ]
       },
-      {
-        path: "historyPurchased",
-        loadChildren: () =>
-          import("../tab4/history-purchased/history-purchased.module").then(
-            m => m.HistoryPurchasedModule
-          )
-      },
+
       {
         path: "",
         redirectTo: "/tabs/tab1",
