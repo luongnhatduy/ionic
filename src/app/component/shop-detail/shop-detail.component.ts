@@ -30,6 +30,7 @@ export class ShopDetailComponent implements OnInit {
       this.item = JSON.parse(params.item);
       this.tabName = params.tabName;
     });
+    if (this.item.count) this.count = this.item.count;
   }
 
   // ngOnDestroy() {

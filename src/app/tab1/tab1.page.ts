@@ -26,17 +26,18 @@ export class Tab1Page {
   ngOnInit(): void {
     this.listItem = [];
     this.shopService.getData(this._getData.bind(this));
+    // this.shopService.getData(this._getData.bind(this));
     this.presentLoading();
 
-    this.bag.add(
-      this.events.events$
-        .pipe(filter(({ key }: EventData) => key == "favorite"))
-        .subscribe(({ key, data }: EventData) => {
-          this.listItem = [];
-          this.shopService.getData(this._getData.bind(this));
-          this.presentLoading();
-        })
-    );
+    // this.bag.add(
+    //   this.events.events$
+    //     .pipe(filter(({ key }: EventData) => key == "favorite"))
+    //     .subscribe(({ key, data }: EventData) => {
+    //       this.listItem = [];
+    //       this.listItem = this.shopService.listItem;
+    //       // this.presentLoading();
+    //     })
+    // );
   }
 
   ngOnDestroy() {
@@ -46,7 +47,7 @@ export class Tab1Page {
   _getData(data) {
     new Promise((resolve, reject) => {
       setTimeout(async () => {
-        this.listItem = data;
+        this.listItem = this.shopService.listItem;
         resolve();
       }, 1000);
     })

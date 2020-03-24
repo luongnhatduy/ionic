@@ -11,14 +11,16 @@ export class Tab2Page {
   listItem: object[] = [];
   constructor(private shopService: ShopService, private router: Router) {}
 
-  _getData(data) {
-    data.forEach(element => {
-      if (element.status) this.listItem.push(element);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.listItem = [];
+  //   this.listItem = this.shopService.listItem
+  // }
 
   ionViewWillEnter() {
     this.listItem = [];
-    this.shopService.getData(this._getData.bind(this));
+    this.shopService.listItem.forEach(element => {
+      if (element.status == true) this.listItem.push(element);
+    });
+    // this.listItem = this.shopService.listItem
   }
 }

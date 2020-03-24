@@ -29,7 +29,7 @@
     </ul>
     <ion-card-content>
       <button type="button" (click)="buy()" class="btn btn-outline-danger mr-4">Mua hàng</button>
-      <button type="button" (click)="addCart()" class="btn btn-outline-success">Thêm vào giỏ</button>
+      <button *ngIf="tabName !== 'tab3'" type="button" (click)="addCart()" class="btn btn-outline-success">Thêm vào giỏ</button>
     </ion-card-content>
   </div>
 

@@ -1,3 +1,4 @@
+import { ShopService } from "./../../tab1/service/shop.service";
 import {
   EventsService,
   EventData
@@ -19,7 +20,8 @@ export class ProductComponent implements OnInit {
   constructor(
     private router: Router,
     private productService: ProductService,
-    private events: EventsService
+    private events: EventsService,
+    private shopService: ShopService
   ) {}
   ngOnInit() {}
 
@@ -33,24 +35,10 @@ export class ProductComponent implements OnInit {
   favorite(item) {
     const idProduct = i => i._id.toString();
     const listIdProduct = this.data.map(idProduct);
-    if (!item.status) {
-      this.data[listIdProduct.indexOf(item._id)] = {
-        ...this.data[listIdProduct.indexOf(item._id)],
-        ...{ status: true }
-      };
-    } else {
-      if (this.tabName == "tab2") {
-        this.data.splice(listIdProduct.indexOf(item._id), 1);
-      } else {
-        this.data[listIdProduct.indexOf(item._id)] = {
-          ...this.data[listIdProduct.indexOf(item._id)],
-          ...{ status: false }
-        };
-      }
+    if (this.tabName == "tab2") {
+      this.data.splice(listIdProduct.indexOf(item._id), 1);
     }
+    this.shopService.setData(item);
     this.productService.favorite(item);
-
-    this.tabName !== "tab1" &&
-      this.events.publish(new EventData('favorite'));
   }
 }

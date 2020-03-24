@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     this.passWord = event.detail.value;
   }
   login() {
-    console.log('asdads')
     if (this.userName !== "" && this.passWord !== "") {
       this.loginService.login(
         this.userName,
