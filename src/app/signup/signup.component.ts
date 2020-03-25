@@ -1,3 +1,4 @@
+import { EventsService, EventData } from "./../common/events-service.service";
 import { Router } from "@angular/router";
 import { SignupService } from "./service/signup.service";
 import { Component, OnInit } from "@angular/core";
@@ -15,7 +16,11 @@ export class SignupComponent implements OnInit {
   phone: number;
   display: string;
 
-  constructor(private signupService: SignupService, private router: Router) {}
+  constructor(
+    private signupService: SignupService,
+    private router: Router,
+    private events: EventsService
+  ) {}
 
   ngOnInit() {
     this.userName = "";
@@ -40,6 +45,7 @@ export class SignupComponent implements OnInit {
   _display(messenge) {
     if (messenge == "success") {
       this.router.navigate(["tab/tabs/tab1"]);
+      this.events.publish(new EventData("login"));
     } else {
       this.display = messenge;
     }

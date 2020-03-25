@@ -27,6 +27,16 @@ export class Tab1Page {
     this.listItem = [];
     this.shopService.getData(this._getData.bind(this));
     this.presentLoading();
+
+    this.bag.add(
+      this.events.events$
+        .pipe(filter(({ key }: EventData) => key == "login"))
+        .subscribe(({ key, data }: EventData) => {
+          this.listItem = [];
+          this.shopService.getData(this._getData.bind(this));
+          this.presentLoading();
+        })
+    );
   }
 
   ngOnDestroy() {
