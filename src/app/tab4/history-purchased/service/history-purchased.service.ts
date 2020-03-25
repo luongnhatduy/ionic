@@ -9,7 +9,7 @@ export class HistoryPurchasedService {
   getData() {
     const accountLogin = JSON.parse(localStorage.getItem("user"));
     return this.http
-      .get<any[]>(`http://localhost:3000/productsPurchased/${accountLogin._id}`)
+      .get<any>(`http://localhost:3000/productsPurchased/${accountLogin._id}`)
       .toPromise();
   }
 }

@@ -13,7 +13,6 @@ export class ShopService {
       next: respon => {
         this.listItem = respon;
         callback();
-        console.log(this.listItem, "list");
       },
       error: e => {},
       complete: () => {}

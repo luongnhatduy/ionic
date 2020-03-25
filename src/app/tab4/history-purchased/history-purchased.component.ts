@@ -9,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 export class HistoryPurchasedComponent implements OnInit {
   constructor(private historyPurchasedService: HistoryPurchasedService) {}
 
-  listItem: any[];
+  listItem: any;
   ngOnInit(): void {
     // this.listItem = JSON.parse(localStorage.getItem("buy"));
   }
@@ -17,7 +17,7 @@ export class HistoryPurchasedComponent implements OnInit {
     this._getData();
   }
   async _getData() {
-    this.listItem = await this.historyPurchasedService.getData();
-    console.log(this.listItem, "newdata");
+    const newdata = await this.historyPurchasedService.getData();
+    this.listItem = newdata.coupon
   }
 }

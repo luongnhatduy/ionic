@@ -16,7 +16,6 @@ export class ProductService {
       })
       .subscribe({
         next: respon => {
-          console.log(respon);
         },
         error: e => {},
         complete: () => {}

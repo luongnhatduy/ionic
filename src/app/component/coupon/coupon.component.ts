@@ -42,7 +42,6 @@ export class CouponComponent implements OnInit {
     );
   }
   async callback(message) {
-    console.log(message);
     const toast = await this.toastController.create({
       color: "success",
       duration: 1000,

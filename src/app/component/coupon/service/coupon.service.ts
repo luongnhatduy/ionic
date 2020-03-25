@@ -15,11 +15,13 @@ export class CouponService {
         phone: phone,
         address: address,
         count: count,
-        idProduct: item._id
+        name: item.name,
+        thumbnail: item.thumbnail,
+        description: item.description,
+        price: item.price
       })
       .subscribe({
         next: respon => {
-          console.log(respon);
           if (respon) {
             callback("Buy success");
           }

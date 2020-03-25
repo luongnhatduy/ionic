@@ -9,9 +9,8 @@ export class Tab3Page {
   constructor() {}
 
   listItem: object[] = [];
-  ngOnInit(): void {
+  ionViewWillEnter() {
     this.listItem = [];
     this.listItem = JSON.parse(localStorage.getItem("cart"));
-    console.log(this.listItem, "art");
   }
 }

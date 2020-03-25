@@ -16,7 +16,7 @@ import { Observable, Subject } from "rxjs";
 export class ShopDetailComponent implements OnInit {
   cl: boolean = true;
   item: any;
-  count: number = 0;
+  count: number = 1;
   tabName: string;
   constructor(
     private router: ActivatedRoute,
@@ -72,6 +72,6 @@ export class ShopDetailComponent implements OnInit {
     this.count++;
   }
   goBack() {
-    this.route.navigate([`tabs/${this.tabName}`]);
+    this.route.navigate([`tab/tabs/${this.tabName}`]);
   }
 }
