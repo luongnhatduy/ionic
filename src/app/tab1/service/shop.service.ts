@@ -14,7 +14,8 @@ export class ShopService {
         this.listItem = respon;
         callback();
       },
-      error: e => {},
+      error: e => {
+      },
       complete: () => {}
     });
   }

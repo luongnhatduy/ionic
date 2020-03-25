@@ -1,3 +1,4 @@
+import { Router } from "@angular/router";
 import { SignupService } from "./service/signup.service";
 import { Component, OnInit } from "@angular/core";
 
@@ -14,31 +15,16 @@ export class SignupComponent implements OnInit {
   phone: number;
   display: string;
 
-  constructor(private signupService: SignupService) {}
+  constructor(private signupService: SignupService, private router: Router) {}
 
   ngOnInit() {
     this.userName = "";
     this.passWord = "";
     this.name = "";
     this.age = null;
-    this.phone = null
+    this.phone = null;
   }
 
-  handleUserName(event) {
-    this.userName = event.detail.value;
-  }
-  handlePassWord(event) {
-    this.passWord = event.detail.value;
-  }
-  handleName(event) {
-    this.name = event.detail.value;
-  }
-  handleAge(event) {
-    this.age = event.detail.value;
-  }
-  handlePhone(event) {
-    this.phone = event.detail.value;
-  }
   signUp() {
     if (this.userName !== "" && this.passWord !== "") {
       this.signupService.signUp(
@@ -52,6 +38,10 @@ export class SignupComponent implements OnInit {
     }
   }
   _display(messenge) {
-    this.display = messenge;
+    if (messenge == "success") {
+      this.router.navigate(["tab/tabs/tab1"]);
+    } else {
+      this.display = messenge;
+    }
   }
 }

@@ -18,13 +18,7 @@ export class LoginComponent implements OnInit {
     this.userName = "";
     this.passWord = "";
   }
-
-  handleUserName(event) {
-    this.userName = event.detail.value;
-  }
-  handlePassWord(event) {
-    this.passWord = event.detail.value;
-  }
+  
   login() {
     if (this.userName !== "" && this.passWord !== "") {
       this.loginService.login(
@@ -35,6 +29,10 @@ export class LoginComponent implements OnInit {
     }
   }
   _display(messenge) {
-    this.messenge = messenge;
+    if (messenge == "success") {
+      this.router.navigate(["tab/tabs/tab1"]);
+    } else {
+      this.messenge = messenge;
+    }
   }
 }

@@ -23,7 +23,6 @@ export class Tab4Page {
   }
   logOut() {
     this.router.navigate([""]);
-    localStorage.setItem("user", null);
-
+    localStorage.clear();
   }
 }

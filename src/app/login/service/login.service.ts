@@ -16,8 +16,8 @@ export class LoginService {
       })
       .subscribe({
         next: respon => {
-          this.router.navigate(["tab/tabs/tab1"]);
           localStorage.setItem("user", JSON.stringify(respon));
+          cb("success");
         },
         error: e => {
           cb(e.error.errors);
